@@ -1,17 +1,16 @@
 import React from "react";
 import { Text, View } from "react-native";
+import UserFeedback, { Number, numberRating, setNumberRating, Star } from "react-native-user-feedback";
 
 export default function ReviewScreen() {
-    return (
-      <View style={{
-          flex: 1, 
-          padding: 15, 
-          justifyContent: "center", 
-          backgroundColor: "#f7f4e3", 
-        }}>
-        <Text>Stall name: </Text>
-        <Text>Food: </Text>
-        <Text>Review: </Text>
-      </View>
-    );
-}
+  return (
+    <View>
+      <UserFeedback 
+      maxNumber={5} 
+      rating={numberRating} 
+      onRatingChanged={setNumberRating} 
+      renderRating={Star} 
+      />
+    </View>
+  );
+};

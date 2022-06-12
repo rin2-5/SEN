@@ -1,4 +1,5 @@
 import React from "react";
+import { Alert } from "react-native"
 import { 
   StyleSheet, 
   Text, 
@@ -8,9 +9,16 @@ import {
   StatusBar } from "react-native";
 
 const DATA = [
-  { title: "Order #1", data: ["Stall 1: Coffee", "Queue no: 1", "Est. time: 5min"] },
-  { title: "Order #1", data: ["Stall 1: Coffee", "Queue no: 1", "Est. time: 5min"] },
+  { title: "Order #1", data: ["Stall 1: Coffee", "Queue no: 1", "Est. time: 3min"] },
+  { title: "Order #2", data: ["Stall 1: Tea", "Queue no: 2", "Est. time: 5min"] },
 ];
+
+// function foodready() {
+//   Alert.alert("Your food is ready!")
+// }
+// setTimeout(() =>{
+//   foodready();
+// },10000);
 
 const Item = ({ title }) => (
   <View style={styles.item}>
@@ -35,7 +43,7 @@ export default function CheckOrderScreen() {
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: "#f9c2ff", 
+    backgroundColor: "pink", 
     padding: 15, 
     marginVertical: 0, 
   }, 
@@ -46,6 +54,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     paddingTop: StatusBar.currentHeight, 
     marginHorizontal: 16, 
+    backgroundColor: "#f7f4e3", 
   }, 
   header: {
     fontSize: 32, 

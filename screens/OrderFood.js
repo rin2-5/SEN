@@ -14,22 +14,13 @@ function OrderFoodScreen() {
         backgroundColor: "#f7f4e3", 
         }}>
         <TouchableOpacity onPress={() => { navigation.navigate("Queue"); }}>
-            <Text style={styles.button}>Cookhouse (non-Muslim food)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("Queue"); }}>
-            <Text style={styles.button}>Cookhouse (Muslim food)</Text>
+            <Text style={styles.button}>Cookhouse</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
-            <Text style={styles.button}>Stall 1: Coffee</Text>
+            <Text style={styles.button}>Drinks Stall</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
-            <Text style={styles.button}>Stall 1: Tea</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
-            <Text style={styles.button}>Stall 2: Chicken Rice</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
-            <Text style={styles.button}>Stall 2: Wanton noodle</Text>
+            <Text style={styles.button}>Food Stall</Text>
         </TouchableOpacity>
       </View>
     );
@@ -43,14 +34,6 @@ function QueuePressed() {
   );
 }
 
-function PayPressed() {
-  Alert.alert (
-  "Payment complete, you are in queue",
-  "Thank you for ordering. Please go to Check Order tab for more details", 
-  [{ text: "OK", onPress: () => console.log("OK Pressed") }]
-  );
-}
-
 function QueueScreen() {
   return (
     <View 
@@ -59,10 +42,20 @@ function QueueScreen() {
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: "#f7f4e3",
-    }}>
+    }}> 
+      <Button color={"#c10000"} title="Queue" onPress={QueuePressed}></Button>
+      <Text>this is so there's space between the buttons</Text>
       <Button color={"#c10000"} title="Queue" onPress={QueuePressed}></Button>
     </View>
   )
+}
+
+function PayPressed() {
+  Alert.alert (
+  "Payment complete, you are in queue",
+  "Thank you for ordering. Please go to Check Order tab for more details", 
+  [{ text: "OK", onPress: () => console.log("OK Pressed") }]
+  );
 }
 
 function PayScreen() {
@@ -74,7 +67,8 @@ function PayScreen() {
         alignItems: "center",
         backgroundColor: "#f7f4e3",
       }}>
-        <Text></Text>
+        <Button color={"#c10000"} title="Payment" onPress={PayPressed}></Button>
+        <Text>for space between buttons</Text>
         <Button color={"#c10000"} title="Payment" onPress={PayPressed}></Button>
       </View>
     );
@@ -140,10 +134,12 @@ export default function OrderFoodStack() {
     button: {
       fontSize: 20, 
       color: "#fdfdfd", 
-      marginBottom: 10, 
-      padding: 10, 
+      marginBottom: 15, 
+      padding: 33, 
       backgroundColor: "#c10000", 
       borderRadius: 5, 
-      width: 300, 
+      height: 90, 
+      width: 250, 
+      textAlign: "center", 
     },
   });
