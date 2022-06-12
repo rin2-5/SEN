@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Button, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, Button, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 
@@ -11,12 +11,12 @@ function OrderFoodScreen() {
         flex: 1, 
         justifyContent: "center", 
         alignItems: "center", 
-        backgroundColor: "#f7f4e3"
+        backgroundColor: "#f7f4e3", 
         }}>
-        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Queue"); }}>
             <Text style={styles.button}>Cookhouse (non-Muslim food)</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Queue"); }}>
             <Text style={styles.button}>Cookhouse (Muslim food)</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
@@ -35,20 +35,47 @@ function OrderFoodScreen() {
     );
   }
 
-var food = ""
+function QueuePressed() {
+  Alert.alert (
+  "You are in queue",
+  "Thank you for ordering. Please go to Check Order tab for more details", 
+  [{ text: "OK", onPress: () => console.log("OK Pressed") }]
+  );
+}
+
+function PayPressed() {
+  Alert.alert (
+  "Payment complete, you are in queue",
+  "Thank you for ordering. Please go to Check Order tab for more details", 
+  [{ text: "OK", onPress: () => console.log("OK Pressed") }]
+  );
+}
+
+function QueueScreen() {
+  return (
+    <View 
+    style={{
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#f7f4e3",
+    }}>
+      <Button color={"#c10000"} title="Queue" onPress={QueuePressed}></Button>
+    </View>
+  )
+}
 
 function PayScreen() {
     return (
       <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#f7f4e3",
-        }}
-      >
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#f7f4e3",
+      }}>
         <Text></Text>
-        <Button title="Payment"></Button>
+        <Button color={"#c10000"} title="Payment" onPress={PayPressed}></Button>
       </View>
     );
   }
@@ -62,6 +89,22 @@ export default function OrderFoodStack() {
         name="Order Your Food" 
         component={OrderFoodScreen} 
         options={{
+            headerTitleStyle: {
+                fontSize: 33, 
+                color: "#fdfdfd",
+                fontWeight: "bold", 
+            }, 
+            headerStyle: {
+                height: 90, 
+                backgroundColor: "#c10000", 
+            }
+        }}
+        />
+        <Stack.Screen 
+        name="Queue" 
+        component={QueueScreen} 
+        options={{
+            headerTintColor: "white", 
             headerTitleStyle: {
                 fontSize: 33, 
                 color: "#fdfdfd",
