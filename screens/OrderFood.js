@@ -13,20 +13,20 @@ function OrderFoodScreen() {
         alignItems: "center", 
         backgroundColor: "#f7f4e3", 
         }}>
-        <TouchableOpacity onPress={() => { navigation.navigate("Queue"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Cookhouse"); }}>
             <Text style={styles.button}>Cookhouse</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Drinks Stall"); }}>
             <Text style={styles.button}>Drinks Stall</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Food Stall"); }}>
             <Text style={styles.button}>Food Stall</Text>
         </TouchableOpacity>
       </View>
     );
   }
 
-function QueuePressed() {
+function CookhousePressed() {
   Alert.alert (
   "You are in queue",
   "Thank you for ordering. Please go to Check Order tab for more details", 
@@ -34,7 +34,7 @@ function QueuePressed() {
   );
 }
 
-function QueueScreen() {
+function CookhouseScreen() {
   return (
     <View 
     style={{
@@ -43,14 +43,14 @@ function QueueScreen() {
       alignItems: "center",
       backgroundColor: "#f7f4e3",
     }}> 
-      <Button color={"#c10000"} title="Queue" onPress={QueuePressed}></Button>
+      <Button color={"#c10000"} title="Chinese Food" onPress={CookhousePressed}></Button>
       <Text>this is so there's space between the buttons</Text>
-      <Button color={"#c10000"} title="Queue" onPress={QueuePressed}></Button>
+      <Button color={"#c10000"} title="Malay Food" onPress={CookhousePressed}></Button>
     </View>
   )
 }
 
-function PayPressed() {
+function DrinksStallPressed() {
   Alert.alert (
   "Payment complete, you are in queue",
   "Thank you for ordering. Please go to Check Order tab for more details", 
@@ -58,7 +58,7 @@ function PayPressed() {
   );
 }
 
-function PayScreen() {
+function DrinksStallScreen() {
     return (
       <View
       style={{
@@ -67,13 +67,39 @@ function PayScreen() {
         alignItems: "center",
         backgroundColor: "#f7f4e3",
       }}>
-        <Button color={"#c10000"} title="Payment" onPress={PayPressed}></Button>
+        <Text style={styles.text}>Place order for: </Text>
+        <Button color={"#c10000"} title="Coffee" onPress={DrinksStallPressed}></Button>
         <Text>for space between buttons</Text>
-        <Button color={"#c10000"} title="Payment" onPress={PayPressed}></Button>
+        <Button color={"#c10000"} title="Tea" onPress={DrinksStallPressed}></Button>
       </View>
     );
   }
+
+  function FoodStallPressed() {
+    Alert.alert (
+    "Payment complete, you are in queue",
+    "Thank you for ordering. Please go to Check Order tab for more details", 
+    [{ text: "OK", onPress: () => console.log("OK Pressed") }]
+    );
+  }
   
+  function FoodStallScreen() {
+      return (
+        <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#f7f4e3",
+        }}>
+          <Text style={styles.text}>Place order for: </Text>
+          <Button color={"#c10000"} title="Chicken Rice" onPress={FoodStallPressed}></Button>
+          <Text>for space between buttons</Text>
+          <Button color={"#c10000"} title="Wanton Noodle" onPress={FoodStallPressed}></Button>
+        </View>
+      );
+    }  
+
 const Stack = createStackNavigator();
   
 export default function OrderFoodStack() {
@@ -95,8 +121,8 @@ export default function OrderFoodStack() {
         }}
         />
         <Stack.Screen 
-        name="Queue" 
-        component={QueueScreen} 
+        name="Cookhouse" 
+        component={CookhouseScreen} 
         options={{
             headerTintColor: "white", 
             headerTitleStyle: {
@@ -111,8 +137,24 @@ export default function OrderFoodStack() {
         }}
         />
         <Stack.Screen 
-        name="Payment" 
-        component={PayScreen} 
+        name="Drinks Stall" 
+        component={DrinksStallScreen} 
+        options={{
+            headerTintColor: "white", 
+            headerTitleStyle: {
+                fontSize: 33, 
+                color: "#fdfdfd",
+                fontWeight: "bold", 
+            }, 
+            headerStyle: {
+                height: 90, 
+                backgroundColor: "#c10000", 
+            }
+        }}
+        />
+        <Stack.Screen 
+        name="Food Stall" 
+        component={FoodStallScreen} 
         options={{
             headerTintColor: "white", 
             headerTitleStyle: {
@@ -142,4 +184,10 @@ export default function OrderFoodStack() {
       width: 250, 
       textAlign: "center", 
     },
+    text: {
+      fontSize: 30, 
+      justifyContent: "flex-end", 
+      flexDirection: "row",
+      padding: 15,
+    }, 
   });
