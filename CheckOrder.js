@@ -13,7 +13,8 @@ export default function CheckOrderScreen() {
         alignItems: "center", 
         backgroundColor: "#f7f4e3", 
         }}>
-        <Text>Hi</Text>
+        <Text>Food::</Text>
+        <Text>Queue number: </Text>
       </View>
     );
   }

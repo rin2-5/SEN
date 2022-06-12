@@ -13,22 +13,22 @@ function OrderFoodScreen() {
         alignItems: "center", 
         backgroundColor: "#f7f4e3"
         }}>
-        <TouchableOpacity onPress={() => { navigation.navigate("PayScreen"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
             <Text style={styles.button}>Cookhouse (non-Muslim food)</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("PayScreen"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
             <Text style={styles.button}>Cookhouse (Muslim food)</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("PayScreen"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
             <Text style={styles.button}>Stall 1: Coffee</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("PayScreen"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
             <Text style={styles.button}>Stall 1: Tea</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("PayScreen"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
             <Text style={styles.button}>Stall 2: Chicken Rice</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => { navigation.navigate("PayScreen"); }}>
+        <TouchableOpacity onPress={() => { navigation.navigate("Payment"); }}>
             <Text style={styles.button}>Stall 2: Wanton noodle</Text>
         </TouchableOpacity>
       </View>
@@ -42,7 +42,7 @@ function PayScreen() {
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "pink",
+          backgroundColor: "#f7f4e3",
         }}
       >
         <Text>Pay for your food!!</Text>
@@ -56,22 +56,36 @@ export default function OrderFoodStack() {
     return (
       <Stack.Navigator>
         <Stack.Screen 
-        name="Order Food" 
+        name="~ Order Food ~" 
         component={OrderFoodScreen} 
         options={{
             headerTitleStyle: {
                 fontSize: 33, 
                 color: "#fdfdfd",
                 fontWeight: "bold", 
-            },
+            }, 
             headerStyle: {
                 height: 90, 
                 backgroundColor: "#c10000", 
-                borderBottomWidth: 2, 
             }
         }}
         />
-        <Stack.Screen name="PayScreen" component={PayScreen} />
+        <Stack.Screen 
+        name="Payment" 
+        component={PayScreen} 
+        options={{
+            headerTintColor: "white", 
+            headerTitleStyle: {
+                fontSize: 33, 
+                color: "#fdfdfd",
+                fontWeight: "bold", 
+            }, 
+            headerStyle: {
+                height: 90, 
+                backgroundColor: "#c10000", 
+            }
+        }}
+        />
       </Stack.Navigator>
     );
   }
