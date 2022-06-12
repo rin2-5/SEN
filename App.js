@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // run "npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs" in terminal
 // run "expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view"
 import OrderFoodScreen from "./OrderFood"
+import CheckOrderScreen from "./CheckOrder";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
         name="Order Food" 
         options={{ headerShown: false }}
         component={OrderFoodScreen} />
+        <Tab.Screen name="Check Order" component={CheckOrderScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
