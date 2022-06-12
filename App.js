@@ -4,9 +4,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // run "npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs" in terminal
 // run "expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view"
-import OrderFoodScreen from "./OrderFood"
-import CheckOrderScreen from "./CheckOrder";
-import ReviewScreen from "./Review";
+import OrderFoodScreen from "./screens/OrderFood"
+import CheckOrderScreen from "./screens/CheckOrder";
+import ReviewScreen from "./screens/Review";
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +32,7 @@ export default function App() {
               height: 90, 
               backgroundColor: "#c10000", 
           }
-      }}
+        }}
         />
         <Tab.Screen 
         name="Review"

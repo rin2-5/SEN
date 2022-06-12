@@ -56,7 +56,7 @@ export default function OrderFoodStack() {
     return (
       <Stack.Navigator>
         <Stack.Screen 
-        name="~ Order Food ~" 
+        name="Order Your Food" 
         component={OrderFoodScreen} 
         options={{
             headerTitleStyle: {
