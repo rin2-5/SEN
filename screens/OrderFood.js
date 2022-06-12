@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, Button, TouchableOpacity, StyleSheet } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 
@@ -34,7 +34,9 @@ function OrderFoodScreen() {
       </View>
     );
   }
-  
+
+var food = ""
+
 function PayScreen() {
     return (
       <View
@@ -45,7 +47,8 @@ function PayScreen() {
           backgroundColor: "#f7f4e3",
         }}
       >
-        <Text>Pay for your food!!</Text>
+        <Text></Text>
+        <Button title="Payment"></Button>
       </View>
     );
   }
