@@ -31,7 +31,7 @@ export default function CheckOrderScreen() {
       )}
       renderItem={({ item }) => <Item title={item} />}
     />
-  </View>
+    </View>
   );
 }
 
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f7f4e3", 
     padding: 10, 
     borderWidth: 1, 
+    borderColor: "#eedbc0", 
   }, 
   title: {
     fontSize: 20, 
@@ -54,6 +55,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#c10000", 
     marginTop: 25, 
     padding: 10, 
-    borderWidth: 1, 
   }, 
 });
