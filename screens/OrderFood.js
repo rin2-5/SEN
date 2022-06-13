@@ -26,7 +26,7 @@ function OrderFoodScreen() {
         </TouchableOpacity>
       </View>
     );
-  }
+}
 
 function CookhousePressed() {
   Alert.alert (
@@ -51,13 +51,13 @@ function CookhouseScreen() {
       <Button color={"#c10000"} title="non-Halal" onPress={CookhousePressed}></Button>
       <Text>___________________________________________________</Text>
       <Text style={styles.rating}>Rating: ⭐⭐⭐</Text>
-      <Text style={styles.review}>{`Lee \n⭐⭐ 11/6/2022 \nThe food too bland leh you shouldn't come here buy food!!`}</Text>
-      <Text style={styles.review}>{`Jack \n⭐⭐⭐⭐ 21/6/2022 \nIt was nice, I especially enjoy the meals on Thurs and I feel that the quality of the food has really gone up recently :)`}</Text>
+      <Text style={styles.review}>{`Lee \n⭐⭐ 21/4/2022 \nThe food too bland leh you shouldn't come here buy food!!`}</Text>
+      <Text style={styles.review}>{`Jack \n⭐⭐⭐⭐ 11/6/2022 \nIt was nice, I especially enjoy the meals on Thurs and I feel that the quality of the food has really gone up recently :)`}</Text>
     </View>
   )
 }
 
-function DrinksStallPressed() {
+function CanteenPressed() {
   Alert.alert (
   "Payment complete, you are in queue",
   "Thank you for ordering. Please go to Check Order tab for more details", 
@@ -66,54 +66,45 @@ function DrinksStallPressed() {
 }
 
 function DrinksStallScreen() {
-    return (
-      <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#f7f4e3",
-      }}>
-        <Text style={styles.text}>Place order for: </Text>
-        <Button color={"#c10000"} title="Coffee" onPress={DrinksStallPressed}></Button>
-        <Text></Text>
-        <Button color={"#c10000"} title="Tea" onPress={DrinksStallPressed}></Button>
-        <Text>___________________________________________________</Text>
-        <Text style={styles.rating}>Rating: ⭐⭐⭐</Text>
-        <Text style={styles.review}>{`Lee \n⭐⭐ 11/6/2022 \nThe food too bland leh you shouldn't come here buy food!!`}</Text>
-        <Text style={styles.review}>{`Jack \n⭐⭐⭐⭐ 21/6/2022 \nIt was nice, I especially enjoy the meals on Thurs and I feel that the quality of the food has really gone up recently :)`}</Text>
-      </View>
-    );
-  }
-
-  function FoodStallPressed() {
-    Alert.alert (
-    "Payment complete, you are in queue",
-    "Thank you for ordering. Please go to Check Order tab for more details", 
-    [{ text: "OK", onPress: () => console.log("OK Pressed") }]
-    );
-  }
+  return (
+    <View
+    style={{
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#f7f4e3",
+    }}>
+      <Text style={styles.text}>Place order for: </Text>
+      <Button color={"#c10000"} title="Coffee" onPress={CanteenPressed}></Button>
+      <Text></Text>
+      <Button color={"#c10000"} title="Tea" onPress={CanteenPressed}></Button>
+      <Text>___________________________________________________</Text>
+      <Text style={styles.rating}>Rating: ⭐⭐⭐⭐⭐</Text>
+      <Text style={styles.review}>{`Rogers \n⭐⭐⭐⭐⭐ 15/1/2022 \nThe drinks aren't bad, the coffee is a must have for those who are tired`}</Text>
+    </View>
+  );
+}
   
-  function FoodStallScreen() {
-      return (
-        <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#f7f4e3",
-        }}>
-          <Text style={styles.text}>Place order for: </Text>
-          <Button color={"#c10000"} title="Chicken Rice" onPress={FoodStallPressed}></Button>
-          <Text></Text>
-          <Button color={"#c10000"} title="Wanton Noodle" onPress={FoodStallPressed}></Button>
-          <Text>___________________________________________________</Text>
-          <Text style={styles.rating}>Rating: ⭐⭐⭐</Text>
-          <Text style={styles.review}>{`Lee \n⭐⭐ 11/6/2022 \nThe food too bland leh you shouldn't come here buy food!!`}</Text>
-          <Text style={styles.review}>{`Jack \n⭐⭐⭐⭐ 21/6/2022 \nIt was nice, I especially enjoy the meals on Thurs and I feel that the quality of the food has really gone up recently :)`}</Text>
-        </View>
-      );
-    }  
+function FoodStallScreen() {
+  return (
+    <View
+    style={{
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#f7f4e3",
+    }}>
+      <Text style={styles.text}>Place order for: </Text>
+      <Button color={"#c10000"} title="Chicken Rice" onPress={CanteenPressed}></Button>
+      <Text></Text>
+      <Button color={"#c10000"} title="Wanton Noodle" onPress={CanteenPressed}></Button>
+      <Text>___________________________________________________</Text>
+      <Text style={styles.rating}>Rating: ⭐⭐⭐⭐</Text>
+      <Text style={styles.review}>{`Jun Kai \n⭐⭐⭐⭐⭐ 26/3/2022 \nThis stall has crispiest wanton noodle I've ever eaten!`}</Text>
+      <Text style={styles.review}>{`Albert \n⭐⭐⭐ 17/5/2022 \nThe portion is pitiful, anyone who wants to eat here should just get food from the cookhouse...`}</Text>
+    </View>
+  );
+}  
 
 const Stack = createStackNavigator();
   
