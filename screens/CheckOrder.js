@@ -40,7 +40,7 @@ export default function CheckOrderScreen() {
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: "#f7f4e3", 
+    backgroundColor: "#fffff0", 
     padding: 10, 
     borderWidth: 1, 
     borderColor: "#eedbc0", 

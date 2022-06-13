@@ -35,13 +35,7 @@ function CookhousePressed() {
 //Displays menu for cookhouse, also shows reviews by others 
 function CookhouseScreen() {
   return (
-    <View 
-    style={{
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: "#f7f4e3",
-    }}> 
+    <View style={styles.container}> 
       <Text style={styles.text}>Place order for: </Text>
       <Button margin={5} color={"#c10000"} title="Halal" onPress={CookhousePressed}></Button>
       <Text></Text>
@@ -66,13 +60,7 @@ function CanteenPressed() {
 //Displays menu for Drinks Stall, also shows reviews by others 
 function DrinksStallScreen() {
   return (
-    <View
-    style={{
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: "#f7f4e3",
-    }}>
+    <View style={styles.container}>
       <Text style={styles.text}>Place order for: </Text>
       <Button color={"#c10000"} title="Coffee" onPress={CanteenPressed}></Button>
       <Text></Text>
@@ -87,13 +75,7 @@ function DrinksStallScreen() {
 //Displays menu for Food Stall, also shows reviews by others 
 function FoodStallScreen() {
   return (
-    <View
-    style={{
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: "#f7f4e3",
-    }}>
+    <View style={styles.container}>
       <Text style={styles.text}>Place order for: </Text>
       <Button color={"#c10000"} title="Chicken Rice" onPress={CanteenPressed}></Button>
       <Text></Text>
@@ -183,7 +165,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     justifyContent: "center", 
     alignItems: "center", 
-    backgroundColor: "#f7f4e3", 
+    backgroundColor: "#fffff0", 
   }, 
   button: {
     fontSize: 20, 

@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     padding: 10, 
     justifyContent: "center", 
-    backgroundColor: "#f7f4e3", 
+    backgroundColor: "#fffff0", 
     borderWidth: 3, 
     borderColor: "#eedbc0", 
   }, 
