@@ -2,6 +2,7 @@ import React from "react";
 import { Alert } from "react-native"
 import { StyleSheet, Text, View, SectionList } from "react-native";
 
+//Data for food ordered 
 const DATA = [
   { title: "Order #1", data: ["Stall 1: Coffee", "Queue no: 1", "Est. time: 1min"] },
   { title: "Order #2", data: ["Stall 2: Chicken Rice", "Queue no: 1", "Est. time: 4min"] },
@@ -13,13 +14,15 @@ const Item = ({ title }) => (
   </View>
 );
 
-// function foodready() {
-//   Alert.alert("Your food is ready!")
-// }
-// setTimeout(() =>{
-//   foodready();
-// }, 3000);
+//Function for alerting when food is done 
+function foodready() {
+  Alert.alert("Your food is ready!")
+}
+setTimeout(() => {
+  foodready();
+}, 60000);
 
+//How the orders are displayed 
 export default function CheckOrderScreen() {
   return (
     <View style={styles.container}>

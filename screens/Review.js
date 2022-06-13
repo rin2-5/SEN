@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image, StyleSheet, TextInput, Alert } from "react-native";
 
 export default function ReviewScreen() {
+  //Star rating 
   const [defaultRating, setDefaultRating] = useState()
   const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5])
 
@@ -31,9 +32,11 @@ export default function ReviewScreen() {
     )
   }
 
-  const [review, onChangeReview] = useState();
+  //Define states for text inputs 
   const [stall, onChangeStall] = useState();
+  const [review, onChangeReview] = useState();
 
+  //Submit button code (what it does when pressed)
   function SubmitPressed() {
     Alert.alert (
     "Review submitted", 
@@ -45,6 +48,7 @@ export default function ReviewScreen() {
     if (review >= "0") onChangeReview(null); 
   }
 
+  //Review page 
   return (
     <View style={styles.container}>
       <TextInput

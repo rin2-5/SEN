@@ -16,7 +16,7 @@ export default function App() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          //Set the icon based on which route it is (name of the tab)
+          //Tab bar icons 
           if (route.name === "Order Food") {
             iconName = "food-fork-drink";
           } else if (route.name === "Check Order") {
@@ -25,12 +25,12 @@ export default function App() {
             iconName = "pencil";
           }
 
-          // You can return any component that you like here!
           return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "#fd4d4f",
         tabBarInactiveTintColor: "gray",
       })}>
+        {/* Screen tab styles */}
         <Tab.Screen 
         name="Order Food" 
         component={OrderFoodScreen} 

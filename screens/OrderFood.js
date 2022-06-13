@@ -3,18 +3,13 @@ import { Text, View, Button, TouchableOpacity, StyleSheet, Alert } from "react-n
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 
+//Displays the stalls to order from 
 function OrderFoodScreen() {
     const navigation = useNavigation();
-
     return (
-      <View style={{ 
-        flex: 1, 
-        justifyContent: "center", 
-        alignItems: "center", 
-        backgroundColor: "#f7f4e3", 
-        }}>
+      <View style={styles.container}>
         <Text style={styles.header}>Camp: Pulau Tekong</Text>
-        <Text style={{fontSize: 20, paddingBottom: 10}}>Order Your Food: </Text>
+        <Text style={styles.text}>Order Your Food: </Text>
         <TouchableOpacity onPress={() => { navigation.navigate("Cookhouse"); }}>
             <Text style={styles.button}>Cookhouse</Text>
         </TouchableOpacity>
@@ -28,6 +23,7 @@ function OrderFoodScreen() {
     );
 }
 
+//Pop-up to alert them that they have ordered 
 function CookhousePressed() {
   Alert.alert (
   "You are in queue",
@@ -36,6 +32,7 @@ function CookhousePressed() {
   );
 }
 
+//Displays menu for cookhouse, also shows reviews by others 
 function CookhouseScreen() {
   return (
     <View 
@@ -57,6 +54,7 @@ function CookhouseScreen() {
   )
 }
 
+//Pop-up to alert them that they have payed 
 function CanteenPressed() {
   Alert.alert (
   "Payment complete, you are in queue",
@@ -65,6 +63,7 @@ function CanteenPressed() {
   );
 }
 
+//Displays menu for Drinks Stall, also shows reviews by others 
 function DrinksStallScreen() {
   return (
     <View
@@ -84,7 +83,8 @@ function DrinksStallScreen() {
     </View>
   );
 }
-  
+
+//Displays menu for Food Stall, also shows reviews by others 
 function FoodStallScreen() {
   return (
     <View
@@ -179,6 +179,12 @@ export default function OrderFoodStack() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1, 
+    justifyContent: "center", 
+    alignItems: "center", 
+    backgroundColor: "#f7f4e3", 
+  }, 
   button: {
     fontSize: 20, 
     textAlign: "center", 
@@ -196,9 +202,7 @@ const styles = StyleSheet.create({
   }, 
   text: {
     fontSize: 20, 
-    justifyContent: "flex-end", 
-    flexDirection: "row",
-    padding: 15,
+    paddingBottom: 10, 
   }, 
   rating: {
     fontSize: 20, 
