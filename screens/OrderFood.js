@@ -43,9 +43,9 @@ function CookhouseScreen() {
       alignItems: "center",
       backgroundColor: "#f7f4e3",
     }}> 
-      <Button color={"#c10000"} title="Chinese Food" onPress={CookhousePressed}></Button>
+      <Button color={"#c10000"} title="Halal" onPress={CookhousePressed}></Button>
       <Text>this is so there's space between the buttons</Text>
-      <Button color={"#c10000"} title="Malay Food" onPress={CookhousePressed}></Button>
+      <Button color={"#c10000"} title="non-Halal" onPress={CookhousePressed}></Button>
     </View>
   )
 }
@@ -185,7 +185,7 @@ export default function OrderFoodStack() {
       textAlign: "center", 
     },
     text: {
-      fontSize: 30, 
+      fontSize: 20, 
       justifyContent: "flex-end", 
       flexDirection: "row",
       padding: 15,
