@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Button, TouchableOpacity, StyleSheet, Alert } from "react-native";
+import { Text, View, Button, TouchableOpacity, StyleSheet, Alert, SectionList } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 
@@ -13,6 +13,8 @@ function OrderFoodScreen() {
         alignItems: "center", 
         backgroundColor: "#f7f4e3", 
         }}>
+        <Text style={styles.header}>Camp: Pulau Tekong</Text>
+        <Text style={{fontSize: 20, paddingBottom: 10}}>Order Your Food: </Text>
         <TouchableOpacity onPress={() => { navigation.navigate("Cookhouse"); }}>
             <Text style={styles.button}>Cookhouse</Text>
         </TouchableOpacity>
@@ -43,9 +45,14 @@ function CookhouseScreen() {
       alignItems: "center",
       backgroundColor: "#f7f4e3",
     }}> 
-      <Button color={"#c10000"} title="Halal" onPress={CookhousePressed}></Button>
-      <Text>this is so there's space between the buttons</Text>
+      <Text style={styles.text}>Place order for: </Text>
+      <Button margin={5} color={"#c10000"} title="Halal" onPress={CookhousePressed}></Button>
+      <Text></Text>
       <Button color={"#c10000"} title="non-Halal" onPress={CookhousePressed}></Button>
+      <Text>___________________________________________________</Text>
+      <Text style={styles.rating}>Rating: ⭐⭐⭐</Text>
+      <Text style={styles.review}>{`Lee \n⭐⭐ 11/6/2022 \nThe food too bland leh you shouldn't come here buy food!!`}</Text>
+      <Text style={styles.review}>{`Jack \n⭐⭐⭐⭐ 21/6/2022 \nIt was nice, I especially enjoy the meals on Thurs and I feel that the quality of the food has really gone up recently :)`}</Text>
     </View>
   )
 }
@@ -69,8 +76,12 @@ function DrinksStallScreen() {
       }}>
         <Text style={styles.text}>Place order for: </Text>
         <Button color={"#c10000"} title="Coffee" onPress={DrinksStallPressed}></Button>
-        <Text>for space between buttons</Text>
+        <Text></Text>
         <Button color={"#c10000"} title="Tea" onPress={DrinksStallPressed}></Button>
+        <Text>___________________________________________________</Text>
+        <Text style={styles.rating}>Rating: ⭐⭐⭐</Text>
+        <Text style={styles.review}>{`Lee \n⭐⭐ 11/6/2022 \nThe food too bland leh you shouldn't come here buy food!!`}</Text>
+        <Text style={styles.review}>{`Jack \n⭐⭐⭐⭐ 21/6/2022 \nIt was nice, I especially enjoy the meals on Thurs and I feel that the quality of the food has really gone up recently :)`}</Text>
       </View>
     );
   }
@@ -94,8 +105,12 @@ function DrinksStallScreen() {
         }}>
           <Text style={styles.text}>Place order for: </Text>
           <Button color={"#c10000"} title="Chicken Rice" onPress={FoodStallPressed}></Button>
-          <Text>for space between buttons</Text>
+          <Text></Text>
           <Button color={"#c10000"} title="Wanton Noodle" onPress={FoodStallPressed}></Button>
+          <Text>___________________________________________________</Text>
+          <Text style={styles.rating}>Rating: ⭐⭐⭐</Text>
+          <Text style={styles.review}>{`Lee \n⭐⭐ 11/6/2022 \nThe food too bland leh you shouldn't come here buy food!!`}</Text>
+          <Text style={styles.review}>{`Jack \n⭐⭐⭐⭐ 21/6/2022 \nIt was nice, I especially enjoy the meals on Thurs and I feel that the quality of the food has really gone up recently :)`}</Text>
         </View>
       );
     }  
@@ -106,7 +121,7 @@ export default function OrderFoodStack() {
     return (
       <Stack.Navigator>
         <Stack.Screen 
-        name="Order Your Food" 
+        name="NSQ" 
         component={OrderFoodScreen} 
         options={{
             headerTitleStyle: {
@@ -177,17 +192,29 @@ export default function OrderFoodStack() {
       fontSize: 20, 
       color: "#fdfdfd", 
       marginBottom: 15, 
-      padding: 33, 
+      padding: 28, 
       backgroundColor: "#c10000", 
       borderRadius: 5, 
-      height: 90, 
+      height: 80, 
       width: 250, 
       textAlign: "center", 
     },
+    header: {
+      fontSize: 25, 
+      margin: 10, 
+    }, 
     text: {
       fontSize: 20, 
       justifyContent: "flex-end", 
       flexDirection: "row",
       padding: 15,
+    }, 
+    rating: {
+      fontSize: 20, 
+      padding: 10, 
+    }, 
+    review: {
+      fontSize: 18, 
+      paddingBottom: 10, 
     }, 
   });

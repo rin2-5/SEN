@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image, StyleSheet, SafeAreaView } from "react-native";
-import UserFeedback, { Number, numberRating, setNumberRating, Star } from "react-native-user-feedback";
 
 export default function ReviewScreen() {
-  const [defaultRating, setDefaultRating] = useState(2)
+  const [defaultRating, setDefaultRating] = useState()
   const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5])
 
   const starImgFilled = 'https://raw.githubusercontent.com/tranhonghan/images/main/star_filled.png'
