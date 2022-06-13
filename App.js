@@ -1,19 +1,36 @@
 import React from "react";
-import { Text, View, Button, TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// run "npm install @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs" in terminal
-// run "expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view"
-import OrderFoodScreen from "./screens/OrderFood"
+import OrderFoodScreen from "./screens/OrderFood";
 import CheckOrderScreen from "./screens/CheckOrder";
 import ReviewScreen from "./screens/Review";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          //Set the icon based on which route it is (name of the tab)
+          if (route.name === "Order Food") {
+            iconName = "food-fork-drink";
+          } else if (route.name === "Check Order") {
+            iconName = "shopping";
+          } else if (route.name === "Review") {
+            iconName = "pencil";
+          }
+
+          // You can return any component that you like here!
+          return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "#fd4d4f",
+        tabBarInactiveTintColor: "gray",
+      })}>
         <Tab.Screen 
         name="Order Food" 
         component={OrderFoodScreen} 

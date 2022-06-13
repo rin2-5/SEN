@@ -31,8 +31,8 @@ export default function ReviewScreen() {
     )
   }
 
-  const [review, onChangeReview] = React.useState(null);
-  const [stall, onChangeStall] = React.useState(null);
+  const [review, onChangeReview] = useState();
+  const [stall, onChangeStall] = useState();
 
   function SubmitPressed() {
     Alert.alert (
@@ -40,6 +40,9 @@ export default function ReviewScreen() {
     "Thank you.", 
     [{ text: "OK", onPress: () => console.log("OK Pressed") }]
     );
+    if (stall >= "0") onChangeStall(null); 
+    if (defaultRating > 0) setDefaultRating(0);
+    if (review >= "0") onChangeReview(null); 
   }
 
   return (
